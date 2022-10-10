@@ -10,7 +10,9 @@
 - OpenAPI para documentação das APIs
 - OpenFeign para integração com APIs externas
 - Docker
-- AWS CloudWatch
+- Spring Actuator
+- Prometheus para consolidar e indexar as métricas usado para monitoramento e alertar eventos
+- Grafana para montar os dashboards das métricas da aplicação
 
 ### _Modelo de Arquitetura:_
 - SOLID (Single Responsibility Principle, Open Closed Principle, Liskov Substitution Principle, Interface Segregation Principle e Dependency Inversion Principle)

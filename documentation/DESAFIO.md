@@ -21,7 +21,7 @@ _4 - As APIs acima deverão expor métricas de execução._
 
 _5 - Crie uma coleção no postman para consumir as APIs criadas._
 
-_6 - Utilizando uma ferramenta de logging (exemplos: Elastic Search, Splunk, Graylog ou similar), crie uma query que mostre em tempo real os eventos que acontecem na execução da API criada no item 6, exemplos (Warning, Erro, Debug, Info, etc)._
+_6 - Utilizando uma ferramenta de logging (exemplos: Elastic Search, Splunk, Graylog ou similar), crie uma query que mostre em tempo real os eventos que acontecem na execução da API criada no item 3, exemplos (Warning, Erro, Debug, Info, etc)._
 
 _7 - Utilizando uma ferramenta de métricas (exemplos: Prometheus, Zabbix, cloudwatch ou similar), crie 3 dashboards que mostre em tempo real a quantidade de execução, a latência (tempo de execução) e quantidade de erros da API criada acima._
 
