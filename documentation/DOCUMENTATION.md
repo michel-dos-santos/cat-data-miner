@@ -26,11 +26,13 @@ _Existe duas forma de acessar a documentação das APIs e obter todos os detalhe
 - Buildar a aplicação
 - Configurar a rede interna
 - Vincular as dependências entre os serviços de banco de dados e API
-- Baixar todas as imagens necessárias incluindo o Java 11 e o banco de dados Postgres
+- Baixar todas as imagens necessárias incluindo o Java 11, banco de dados Postgres, Prometheus e Grafana
 - Rodar o script inicial para a criação das tabelas
 - Iniciar a aplicação na porta 8010
+- Iniciar o prometheus na porta 9090
+- Iniciar o grafana na porta 3000
 
-2 - Rodar o comando ```sudo docker-compose ps``` para verificar se o "State" está UP ou simplesmente chamar o health check que foi disponibilizado na colection do postman
+2 - Rodar o comando ```sudo docker-compose ps``` para verificar se o "State" está UP ou simplesmente chamar o health check que foi disponibilizado na [colection do postman](Teste%20Itaú%20-%20The%20Cat%20API.postman_collection.json)
 
 3 - Chamar o endpoint [Miner breeds from The Cat API](http://localhost:8010/api/v1/miner/the-cat)
 
