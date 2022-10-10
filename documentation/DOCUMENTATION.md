@@ -20,9 +20,9 @@ _Existe duas forma de acessar a documentação das APIs e obter todos os detalhe
 # Rodando a aplicação
 
 ### Pré-requisito
-- Ter o docker instalado na maquina
+- Ter o maven e o docker instalado na maquina
 
-1 - A aplicação esta usando docker com isso para rodar a aplicação basta ir na pasta raiz e rodar o comando ```sudo docker-compose up -d``` o mesmo irá executar as seguintes etapas:
+1 - A aplicação esta usando docker com isso para rodar a aplicação basta ir na pasta raiz executar o ```mvn clean install``` e rodar o comando ```sudo docker-compose up -d``` o mesmo irá executar as seguintes etapas:
 - Buildar a aplicação
 - Configurar a rede interna
 - Vincular as dependências entre os serviços de banco de dados e API
