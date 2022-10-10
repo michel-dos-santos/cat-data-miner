@@ -10,7 +10,7 @@
 - OpenAPI para documentação das APIs
 - OpenFeign para integração com APIs externas
 - Docker
-- Spring Actuator
+- Spring Actuator para extração e geração de métricas da aplicação e ambiente
 - Prometheus para consolidar e indexar as métricas usado para monitoramento e alertar eventos
 - Grafana para montar os dashboards das métricas da aplicação
 
