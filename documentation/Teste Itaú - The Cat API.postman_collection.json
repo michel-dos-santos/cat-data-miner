@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "6f4e109d-1108-40cc-9ffe-f052840144f1",
+		"name": "Teste Itaú - The Cat API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "588562"
+	},
+	"item": [
+		{
+			"name": "Métricas Actuator",
+			"item": [
+				{
+					"name": "Counter execution",
+					"item": [
+						{
+							"name": "Miner breeds from The Cat API",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.count.save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.count.save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Breed Names",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.count.findAllBreedName",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.count.findAllBreedName"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Breed By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.count.findById",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.count.findById"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Breed By Temperament",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.count.findAllByTemperament",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.count.findAllByTemperament"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Breed By Origin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.count.findAllByOrigin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.count.findAllByOrigin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Timer execution",
+					"item": [
+						{
+							"name": "Miner breeds from The Cat API",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.time.save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.time.save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Breed Names",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.time.findAllBreedName",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.time.findAllBreedName"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Breed By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.time.findById",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.time.findById"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Breed By Temperament",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.time.findAllByTemperament",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.time.findAllByTemperament"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Breed By Origin",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8010/api/actuator/metrics/execution.time.findAllByOrigin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8010",
+									"path": [
+										"api",
+										"actuator",
+										"metrics",
+										"execution.time.findAllByOrigin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Health check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APIs Actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/actuator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/actuator/metrics/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"actuator",
+								"metrics",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "APIs",
+			"item": [
+				{
+					"name": "Get All Breed Names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/v1/breed/names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"v1",
+								"breed",
+								"names"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "rowsPerPage",
+									"value": "100000",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Breed By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/v1/breed/:ID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"v1",
+								"breed",
+								":ID"
+							],
+							"variable": [
+								{
+									"key": "ID",
+									"value": "d72f924b-246e-4ded-817d-9f06c906c08d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Breed By Temperament",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/v1/breed/temperament/:TEMPERAMENT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"v1",
+								"breed",
+								"temperament",
+								":TEMPERAMENT"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "rowsPerPage",
+									"value": "100000",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "desc",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "TEMPERAMENT",
+									"value": "active"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Breed By Origin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/v1/breed/origin/:ORIGIN",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"v1",
+								"breed",
+								"origin",
+								":ORIGIN"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "rowsPerPage",
+									"value": "100000",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "desc",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "ORIGIN",
+									"value": "United States"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documentação",
+			"item": [
+				{
+					"name": "Get Swagger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/documentation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"documentation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mineração de dados",
+			"item": [
+				{
+					"name": "Miner breeds from The Cat API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/v1/miner/the-cat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"v1",
+								"miner",
+								"the-cat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
