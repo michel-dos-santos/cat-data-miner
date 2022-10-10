@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'api-cats-miner-job'
+    metrics_path: '/api/actuator/prometheus'
+    static_configs:
+      - targets: ['api:8010']
+        labels:
+          application: 'api-cats-miner'
