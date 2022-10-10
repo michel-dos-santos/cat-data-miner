@@ -18,9 +18,9 @@
 </p>
 
 ## Tabela de conteúdo
-- [Desafio](DESAFIO.md)
-- [Arquitetura](ARQUITETURA.md)
-- [Documentação](DOCUMENTATION.md)
+- [Desafio](documentation/DESAFIO.md)
+- [Arquitetura](documentation/ARQUITETURA.md)
+- [Documentação](documentation/DOCUMENTATION.md)
 
 
 
