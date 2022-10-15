@@ -38,7 +38,6 @@ import java.util.UUID;
 public class BreedController {
     @Autowired
     private FindAllBreedNameUseCase findAllBreedNameUseCase;
-
     @Autowired
     private FindByIDUseCase findByIDUseCase;
     @Autowired
@@ -47,7 +46,6 @@ public class BreedController {
     private FindAllByOriginUseCase findAllByOriginUseCase;
     @Autowired
     private ModelMapper modelMapper;
-
     @Autowired
     private LogRepository logRepository;
 

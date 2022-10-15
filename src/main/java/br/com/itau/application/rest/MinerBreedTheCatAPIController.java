@@ -30,7 +30,7 @@ public class MinerBreedTheCatAPIController {
     @PostMapping
     public void save() throws APIException {
         try {
-            new Thread(() -> saveBreedUseCase.save()).start();
+            saveBreedUseCase.save();
         } catch (Exception e) {
             throw APIException.internalError("Erro interno inesperado ao minerar dados do the cat api", e.getMessage());
         }

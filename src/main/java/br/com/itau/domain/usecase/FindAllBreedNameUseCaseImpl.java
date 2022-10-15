@@ -6,9 +6,7 @@ import br.com.itau.domain.entity.Pageable;
 import br.com.itau.domain.port.repository.BreedRepository;
 import br.com.itau.domain.port.repository.LogRepository;
 import br.com.itau.domain.port.usecase.FindAllBreedNameUseCase;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class FindAllBreedNameUseCaseImpl implements FindAllBreedNameUseCase {
 
     private final BreedRepository breedRepository;

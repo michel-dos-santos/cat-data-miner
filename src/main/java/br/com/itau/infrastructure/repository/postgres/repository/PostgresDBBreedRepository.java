@@ -12,7 +12,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
 
 @Component
 public class PostgresDBBreedRepository implements BreedRepository {

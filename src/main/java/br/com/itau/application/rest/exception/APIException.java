@@ -1,7 +1,6 @@
 package br.com.itau.application.rest.exception;
 
 import br.com.itau.domain.exception.ErrorResponse;
-import io.micrometer.core.annotation.Counted;
 import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;
