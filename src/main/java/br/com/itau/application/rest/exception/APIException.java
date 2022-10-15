@@ -1,9 +1,6 @@
 package br.com.itau.application.rest.exception;
 
-import br.com.itau.domain.exception.ErrorResponse;
 import org.springframework.http.HttpStatus;
-
-import java.util.Arrays;
 
 public class APIException extends Exception {
 
@@ -35,15 +32,6 @@ public class APIException extends Exception {
                 HttpStatus.BAD_REQUEST.value());
     }
 
-    public static APIException unauthorized(String reason, String message) {
-        return new APIException(HttpStatus.UNAUTHORIZED.getReasonPhrase(), reason, message,
-                HttpStatus.UNAUTHORIZED.value());
-    }
-
-    public static APIException forbidden(String reason, String message) {
-        return new APIException(HttpStatus.FORBIDDEN.getReasonPhrase(), reason, message, HttpStatus.FORBIDDEN.value());
-    }
-
     public static APIException notFound(String reason, String message) {
         return new APIException(HttpStatus.NOT_FOUND.getReasonPhrase(), reason, message, HttpStatus.NOT_FOUND.value());
     }
@@ -53,12 +41,4 @@ public class APIException extends Exception {
                 HttpStatus.INTERNAL_SERVER_ERROR.value());
     }
 
-    public static APIException getBy(ErrorResponse errorResponse) {
-        String code = errorResponse.getCode();
-        String description = errorResponse.getDescription();
-        String message = errorResponse.getMessage();
-        HttpStatus httpStatus = Arrays.stream(HttpStatus.values()).filter(v -> code.equalsIgnoreCase(v.getReasonPhrase())).findFirst().get();
-
-        return new APIException(httpStatus.getReasonPhrase(), description, message, httpStatus.value());
-    }
 }

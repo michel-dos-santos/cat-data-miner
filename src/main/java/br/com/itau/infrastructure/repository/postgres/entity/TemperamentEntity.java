@@ -21,6 +21,7 @@ public class TemperamentEntity {
 
     @Id
     @GeneratedValue
+    @Column(columnDefinition = "uuid")
     private UUID id;
     @CreatedDate
     @Column(nullable = false, updatable = false)

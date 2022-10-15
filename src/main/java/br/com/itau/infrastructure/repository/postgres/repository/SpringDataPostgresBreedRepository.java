@@ -17,4 +17,5 @@ public interface SpringDataPostgresBreedRepository extends PagingAndSortingRepos
     Page<BreedEntity> findAllByOrigin(PageRequest pageRequest, @Param("origin") String origin);
 
     boolean existsByExternalId(String externalId);
+
 }
