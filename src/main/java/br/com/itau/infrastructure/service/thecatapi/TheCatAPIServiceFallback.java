@@ -14,7 +14,7 @@ public class TheCatAPIServiceFallback implements FallbackFactory<TheCatAPIServic
 
     @Override
     public TheCatAPIServiceFeignClient create(Throwable cause) {
-        logRepository.info(cause.getMessage());
+        logRepository.error(cause.getMessage());
 
         throw new ServiceUnavailableException("The Cat API");
     }

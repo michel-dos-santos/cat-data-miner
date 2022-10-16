@@ -2,6 +2,7 @@
 <configuration>
 
     <property name="LOGS" value="./logs" />
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -27,16 +28,41 @@
         </rollingPolicy>
     </appender>
 
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <mdc />
+                <context />
+                <logLevel />
+                <loggerName />
+                <pattern>
+                    <pattern>
+                        {
+                        "app": "logger"
+                        }
+                    </pattern>
+                </pattern>
+                <threadName />
+                <message />
+                <logstashMarkers />
+                <stackTrace />
+            </providers>
+        </encoder>
+    </appender>
+
     <!-- LOG everything at INFO level -->
     <root level="info">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
+        <appender-ref ref="logstash" />
     </root>
 
     <!-- LOG "br.com.itau*" at TRACE level -->
     <logger name="br.com.itau" level="trace" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
+        <appender-ref ref="logstash" />
     </logger>
 
 </configuration>
