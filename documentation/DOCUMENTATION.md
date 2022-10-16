@@ -71,5 +71,8 @@ _Existe duas forma de acessar a documentação das APIs e obter todos os detalhe
 ![img.png](SpringBoot-2.png)
 ![img.png](Dashboard-1.png)
 
+### Print Kibana
+![img.png](Kibana.png)
+
 ### Cobertura de Teste Unitário
 ![img.png](unit-test.png)
