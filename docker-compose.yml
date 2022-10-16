@@ -4,21 +4,31 @@ networks:
   commons-api:
     driver: bridge
 
+volumes:
+  elasticsearch_data:
+    driver: local
+
 services:
-  api:
-    build: .
-    restart: always
-    container_name: api
-    ports:
-      - "8010:8010"
-    environment:
-      - DB_URL=jdbc:postgresql://postgres-compose:5432/postgres?currentSchema=public
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-    networks:
-      - commons-api
-    depends_on:
-      - postgres-compose
+  #api:
+  #  build: .
+  #  restart: always
+  #  container_name: api
+  #  ports:
+  #    - "8010:8010"
+  #  environment:
+  #    - DB_URL=jdbc:postgresql://postgres-compose:5432/postgres?currentSchema=public
+  #    - DB_USER=postgres
+  #    - DB_PASSWORD=postgres
+  #  networks:
+  #    - commons-api
+  #  depends_on:
+  #    - postgres-compose
+  #  deploy:
+  #    resources:
+  #      limits:
+  #        memory: 1G
+  #      reservations:
+  #        memory: 1G
 
   postgres-compose:
     image: postgres
@@ -46,6 +56,12 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
       - commons-api
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
 
   grafana:
     image: grafana/grafana-oss:8.5.2
@@ -65,3 +81,65 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_SERVER_DOMAIN=localhost
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.3.3
+    container_name: elasticsearch
+    restart: always
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.type=single-node"
+      - xpack.security.enabled=false
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - commons-api
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.3.3
+    container_name: kibana
+    restart: always
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
+    depends_on:
+      - elasticsearch
+    networks:
+      - commons-api
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.3.3
+    container_name: logstash
+    restart: always
+    volumes:
+      - ./data/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./data/logstash/pipeline:/usr/share/logstash/pipeline:ro
+    ports:
+      - "5044:5044"
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - commons-api
+    depends_on:
+      - elasticsearch

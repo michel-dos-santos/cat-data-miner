@@ -2,7 +2,7 @@ FROM adoptopenjdk/openjdk11:latest
 
 WORKDIR /app
 
-COPY target/cat-data-miner-1.0-SNAPSHOT.jar /app/spring-app.jar
+COPY target/cat-data-miner-1.0.0.jar /app/spring-app.jar
 
 ENV PROFILE local
 ENV DB_URL url
